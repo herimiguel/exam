@@ -1,0 +1,43 @@
+@model exam.Models.ActivityViewModel
+@using exam.Models
+
+
+       
+<a asp-controller="User" asp-action="Logout">Logout</a>
+<a href="Dashboard">HOME</a>
+
+<form asp-controller="Activity" asp-action="AddActivity" method= "post" >
+
+    <label asp-for="Title"></label>
+    <input asp-for="Title"/>
+    <p><span class="error" asp-validation-for="Title"></span></p>
+
+    <label asp-for="Date"></label>
+    <input asp-for="Date"/>
+    <p><span class="error" asp-validation-for="Date"></span></p>
+
+    <label asp-for="Time"></label>
+    <span>ex: 12:00</span>
+    <input asp-for="Time" />
+    <p><span class="error" asp-validation-for="Time" ></span></p>
+
+
+    <label asp-for="Coordinator"></label>
+    <span>(your name goes here)</span>    
+    <input asp-for="Coordinator"/>
+   <p> <span class="error" asp-validation-for="Coordinator" ></span></p>
+
+    <label asp-for="Duration"></label>
+    <span>ex: 3 hours, 30 min, 4 days</span>    
+    <input asp-for="Duration" />
+   <p> <span class="error" asp-validation-for="Duration" ></span></p>
+
+    <label asp-for="Description"></label>
+    <input asp-for="Description"/>
+    <p><span class="error" asp-validation-for="Description" ></span></p>
+
+
+    <br>
+    <button class="button-primary" type="submit" >create</button>
+
+</form>

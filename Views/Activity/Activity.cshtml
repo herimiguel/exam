@@ -1,0 +1,18 @@
+@model exam.Models.Activity
+@{
+    string activityTitle = @Model.Title;
+}
+<a asp-controller="Activity" asp-action="Dashboard" >Dashboard</a> |
+<a asp-controller="User" asp-action="Logout" >Logout</a> |
+
+<h2>@activityTitle activity</h2>
+
+<h3>Date: @Model.Date.ToString("MMM d, yyyy")</h3>
+<h3>Event Coordinator: @Model.Coordinator  </h3>
+<h3>Description: @Model.Description  </h3>
+
+<h3>PARTICIPANTS:</h3>
+
+    @foreach ( var guestConnection in @Model.Guests) {
+        <h4>@guestConnection.Guest.first_name, @guestConnection.Guest.last_name</h4>
+    }
